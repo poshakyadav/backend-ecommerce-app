@@ -1,0 +1,62 @@
+package com.ecommerce.bkd.records.returnOrder;
+
+import java.util.List;
+
+public record ShiprocketReturnOrderRequest(
+        String order_id,
+        String order_date,
+        Integer channel_id,
+        String pickup_customer_name,
+        String pickup_last_name,
+        String pickup_address,
+        String pickup_address_2,
+        String pickup_city,
+        String pickup_state,
+        String pickup_country,
+        Integer pickup_pincode,
+        String pickup_email,
+        String pickup_phone,
+        String pickup_isd_code,
+        String shipping_customer_name,
+        String shipping_last_name,
+        String shipping_address,
+        String shipping_address_2,
+        String shipping_city,
+        String shipping_country,
+        Integer shipping_pincode,
+        String shipping_state,
+        String shipping_email,
+        String shipping_isd_code,
+        Long shipping_phone,
+        List<OrderItem> order_items,
+        String payment_method,
+        Integer total_discount,
+        Integer sub_total,
+        Double length,
+        Double breadth,
+        Double height,
+        Double weight
+) {
+    public record OrderItem(
+            String name,
+            String sku,
+            Integer units,
+            Integer selling_price,
+            Integer discount,
+            String hsn,
+            String return_reason,
+            Boolean qc_enable,
+            String qc_color,
+            String qc_brand,
+            String qc_serial_no,
+            String qc_ean_barcode,
+            String qc_size,
+            String qc_product_name,
+            String qc_product_image,
+            String qc_product_imei,
+            Boolean qc_brand_tag,
+            Boolean qc_used_check,
+            Boolean qc_sealtag_check,
+            String qc_check_damaged_product
+    ) {}
+}
